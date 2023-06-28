@@ -1,7 +1,7 @@
 import { getBaseUrl } from '../../../lib/getBaseUrl';
 import { Movie } from './movie';
 
-export async function getMovie() {
+export async function getMovies() {
   const res = await fetch(`${getBaseUrl()}/api/movies`);
   if (!res.ok) {
     // Render the closest `error.js` Error Boundary
