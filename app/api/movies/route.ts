@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
+import { getTMDBUrl, pages } from '../../../lib/getTMDBUrl';
 import { Movie } from './movie';
-
-const API_KEY = process.env.API_KEY;
 
 export type MovieResponse = {
   page: number;
@@ -11,16 +10,12 @@ export type MovieResponse = {
 };
 
 export async function GET(request: Request) {
-  // const { searchParams } = new URL(request.url);
-  // const id = searchParams.get('id');
-  const res = await fetch(
-    `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-us`,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  );
+  const { searchParams } = new URL(request.url);
+  const res = await fetch(`${getTMDBUrl()}/${pages.comedyMovies}`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
   const product: MovieResponse = await res.json();
   return NextResponse.json(product.results);
 }

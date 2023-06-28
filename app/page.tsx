@@ -1,5 +1,5 @@
-import styles from '../page.module.css';
 import { getMovie } from './api/movies/getMovie';
+import styles from './page.module.css';
 
 export default async function Home() {
   const movies = await getMovie();
