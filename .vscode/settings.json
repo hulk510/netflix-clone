@@ -1,0 +1,33 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.addMissingImports": true,
+    "source.organizeImports": true
+  },
+  // ファイルが移動したらimport先を変える
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Auto importするファイルのpath名をどうするか
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+
+  // .ts
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  // .tsx
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  }
+}
