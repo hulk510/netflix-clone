@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getMovies } from '../api/movies/getMovies';
+import styles from './row.module.css';
 
 type Props = {
   title: string;
@@ -12,9 +13,9 @@ export const Row: React.FC<Props> = async ({ title, category, isLargeRow }) => {
   const movies = await getMovies(category);
   console.log(movies);
   return (
-    <div className="Row">
+    <div className={styles.row}>
       <h2>{title}</h2>
-      <div className="Row-posters">
+      <div className={styles.posters}>
         {/* ポスターコンテンツ */}
         {movies.map((movie, i) => (
           <Image
@@ -23,8 +24,9 @@ export const Row: React.FC<Props> = async ({ title, category, isLargeRow }) => {
             src={`${base_url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
-            width={isLargeRow ? 300 : 200}
-            height={isLargeRow ? 450 : 250}
+            className={styles.poster}
+            width={300}
+            height={isLargeRow ? 350 : 250}
           />
         ))}
       </div>
