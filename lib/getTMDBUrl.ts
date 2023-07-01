@@ -2,7 +2,7 @@ import { cache } from 'react';
 
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
-export const pages = {
+export const categories: { [key: string]: string } = {
   trending: `/trending/all/week?api_key=${TMDB_API_KEY}&language=en-us`,
   netflixOriginals: `/discover/tv?api_key=${TMDB_API_KEY}&with_networks=213`,
   topRated: `/discover/tv?api_key=${TMDB_API_KEY}&languager=en-us`,

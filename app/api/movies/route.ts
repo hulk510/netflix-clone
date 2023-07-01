@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTMDBUrl, pages } from '../../../lib/getTMDBUrl';
+import { categories, getTMDBUrl } from '../../../lib/getTMDBUrl';
 import { Movie } from './movie';
 
 export type MovieResponse = {
@@ -11,7 +11,8 @@ export type MovieResponse = {
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const res = await fetch(`${getTMDBUrl()}/${pages.comedyMovies}`, {
+  const category = searchParams.get('category') || 'topRated';
+  const res = await fetch(`${getTMDBUrl()}/${categories[category]}`, {
     headers: {
       'Content-Type': 'application/json',
     },

@@ -1,17 +1,16 @@
-import { getMovies } from './api/movies/getMovies';
+import { Row } from './_components/row';
 import styles from './page.module.css';
 
 export default async function Home() {
-  const movies = await getMovies();
   return (
     <main className={styles.main}>
-      <p>
-        {movies.map((m) => (
-          <div key={m.id}>
-            <p>{m.title}</p>
-          </div>
-        ))}
-      </p>
+      <Row title="NETFLIX ORIGUINALS" category="netflixOriginals" isLargeRow />
+      <Row title="Top Rated" category="topRated" />
+      <Row title="Action Movies" category="actionMovies" />
+      <Row title="Comedy Movies" category="comedyMovies" />
+      <Row title="Horror Movies" category="horrorMovies" />
+      <Row title="Romance Movies" category="romanceMovies" />
+      <Row title="DOcumentaries" category="documentMovies" />
     </main>
   );
 }
