@@ -22,4 +22,5 @@ export type Movie = {
   original_name: string;
   poster_path: string;
   backdrop_path: string;
+  overview: string;
 };
