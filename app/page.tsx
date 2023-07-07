@@ -1,10 +1,12 @@
 import { Banner } from './_components/banner';
+import { Nav } from './_components/nav';
 import { Row } from './_components/row';
 import styles from './page.module.css';
 
 export default async function Home() {
   return (
     <>
+      <Nav />
       <Banner />
       <main className={styles.main}>
         <Row
