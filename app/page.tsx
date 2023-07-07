@@ -6,8 +6,10 @@ import styles from './page.module.css';
 export default async function Home() {
   return (
     <>
-      <Nav />
-      <Banner />
+      <header>
+        <Nav />
+        <Banner />
+      </header>
       <main className={styles.main}>
         <Row
           title="NETFLIX ORIGUINALS"
