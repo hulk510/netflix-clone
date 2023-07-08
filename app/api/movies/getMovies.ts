@@ -3,6 +3,7 @@ import { Movie } from './movie';
 
 export async function getMovies(category: string) {
   const res = await fetch(`${getBaseUrl()}/api/movies?category=${category}`);
+  console.log('res');
   if (!res.ok) {
     // Render the closest `error.js` Error Boundary
     throw new Error('Something went wrong!');
