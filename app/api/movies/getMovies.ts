@@ -3,10 +3,13 @@ import { Movie } from './movie';
 
 export async function getMovies(category: string) {
   const res = await fetch(`${getBaseUrl()}/api/movies?category=${category}`);
-  if (!res.ok) {
-    // Render the closest `error.js` Error Boundary
-    throw new Error('Something went wrong!');
+  let movies: Movie[] = [];
+  switch (res.status) {
+    case 200:
+      movies = await res.json();
+      break;
+    default:
+      break;
   }
-  const movies: Movie[] = await res.json();
   return movies;
 }

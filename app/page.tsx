@@ -3,10 +3,11 @@ import { Nav } from './_components/nav';
 import { Row } from './_components/row';
 import styles from './page.module.css';
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <header>
+        {/* 修正しました */}
         <Nav />
         <Banner />
       </header>
