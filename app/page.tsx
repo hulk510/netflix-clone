@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <>
       <header>
+        {/* 修正しました */}
         <Nav />
         <Banner />
       </header>
