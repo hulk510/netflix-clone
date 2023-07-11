@@ -10,7 +10,6 @@ export type MovieResponse = {
 };
 
 export async function GET(request: Request) {
-  console.log('start');
   const { searchParams } = new URL(request.url);
   const category = searchParams.get('category') || 'topRated';
   const res = await fetch(`${getTMDBUrl()}/${categories[category]}`, {
@@ -18,7 +17,6 @@ export async function GET(request: Request) {
       'Content-Type': 'application/json',
     },
   });
-  console.log(res);
   const product: MovieResponse = await res.json();
   return NextResponse.json(product.results);
 }
