@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <>
       <header>
-        {/* 修正しました */}
         <Nav />
         <Banner />
       </header>
@@ -22,7 +21,7 @@ export default function Home() {
         <Row title="Comedy Movies" category="comedyMovies" />
         <Row title="Horror Movies" category="horrorMovies" />
         <Row title="Romance Movies" category="romanceMovies" />
-        <Row title="DOcumentaries" category="documentMovies" />
+        <Row title="Documentaries" category="documentMovies" />
       </main>
     </>
   );
