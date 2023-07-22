@@ -6,3 +6,7 @@
 ```bash
 pnpm dev
 ```
+
+## 成果物
+https://github.com/hulk510/netflix-clone/assets/33943897/676fd4f6-451d-491d-b433-c0e056b4c653
+
