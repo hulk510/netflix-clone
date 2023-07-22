@@ -1,5 +1,3 @@
-import { cache } from 'react';
-
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 const language = 'ja';
@@ -17,4 +15,4 @@ export const categories: { [key: string]: string } = {
   documentMovies: `/discover/tv?api_key=${TMDB_API_KEY}&with_genres=99&language=${language}`,
 };
 
-export const getTMDBUrl = cache(() => 'https://api.themoviedb.org/3');
+export const getTMDBUrl = () => 'https://api.themoviedb.org/3';

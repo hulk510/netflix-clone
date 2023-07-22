@@ -23,8 +23,11 @@ type Options = {
 
 export const Row: React.FC<Props> = ({ title, category, isLargeRow }) => {
   const base_url = 'https://image.tmdb.org/t/p/original';
-  const { data: movies } = useGetMovies(category);
+  const { data: movies, isLoading } = useGetMovies(category);
   const [trailerUrl, setTrailerUrl] = useState<string | null>('');
+  if (isLoading) {
+    return <></>;
+  }
 
   const opts: Options = {
     height: '390',
@@ -39,10 +42,6 @@ export const Row: React.FC<Props> = ({ title, category, isLargeRow }) => {
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
-      console.log(movie);
-      console.log(
-        `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-      );
       const data = await axios.get(
         `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
       );
