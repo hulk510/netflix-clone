@@ -3,8 +3,8 @@ import axios from 'axios';
 import Image from 'next/image';
 import { useState } from 'react';
 import YouTube from 'react-youtube';
-import { useGetMovies } from '../api/movies/getMovies';
 import { Movie } from '../api/movies/movie';
+import { useGetMovies } from '../hooks/useGetMovies';
 import styles from './row.module.css';
 
 type Props = {
