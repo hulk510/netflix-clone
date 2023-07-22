@@ -29,5 +29,9 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
+  },
+
+  "markdown.copyFiles.destination": {
+    "/**/*": "/images/${documentBaseName}/"
   }
 }
